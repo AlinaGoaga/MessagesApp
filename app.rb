@@ -5,8 +5,8 @@ class Messenger < Sinatra::Base
   enable :sessions
 
   get '/' do
-   session[:message_history] = MessageHistory.new
-   redirect "/index"
+    session[:message_history] = MessageHistory.new
+    redirect '/index'
   end
 
   get '/index' do
@@ -16,10 +16,10 @@ class Messenger < Sinatra::Base
   end
 
   post '/message_storage' do
-    message = Message.new(params[:message])
     @message_history = session[:message_history]
+    message = Message.new(params[:message])
     @message_history.add_to_list(message)
-    redirect "/index"
+    redirect '/index'
   end
 
   run! if app_file == $PROGRAM_NAME

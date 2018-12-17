@@ -6,5 +6,20 @@
   <input type="submit" value="Submit">
 </form>
 
+<% if @list == [] %>
+<h1> You don't have any messages yet! </h1>
+<% else %>
+<% @list.each do |item| %>
+<% key = item.keys.first %>
 
-<h2> <%= @list %> </h2>
+
+    <div style="width:25em; float:left;">
+     <%= item.keys.first %>
+    </div>
+
+    <div style="overflow:hidden">
+        <%= item[key] %>
+    </div>
+
+<% end %>
+<% end %>

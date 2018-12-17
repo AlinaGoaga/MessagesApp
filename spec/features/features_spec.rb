@@ -24,7 +24,7 @@ feature 'Time stamp' do
 
   scenario 'Time is saved and shown with new message' do
     open_page_fill_in
-    expect(page).to have_content('I love programming : 2018-12-17 15:10:00 +0000')
+    expect(page).to have_content("I love programming\n2018-12-17 15:10:00 +0000")
   end
 end
 
@@ -36,7 +36,7 @@ feature 'Multiple messages' do
     Timecop.freeze(Time.local(2018, 12, 17, 16, 10, 0))
     fill_in 'message', with: 'I love swimming'
     click_button 'Submit'
-    expect(page).to have_content('I love programming : 2018-12-17 15:10:00 +0000')
-    expect(page).to have_content('I love swimming : 2018-12-17 16:10:00 +0000')
+    expect(page).to have_content("I love programming\n2018-12-17 15:10:00 +0000")
+    expect(page).to have_content("I love swimming\n2018-12-17 16:10:00 +0000")
   end
 end
