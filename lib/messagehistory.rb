@@ -1,4 +1,4 @@
-require 'message'
+require_relative 'message'
 
 class MessageHistory
   attr_reader :list
