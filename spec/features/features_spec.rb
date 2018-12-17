@@ -7,10 +7,24 @@ end
 
 feature 'New message' do
   scenario 'user is allowed to create a new message' do
-    visit('/')
+    open_page_fill_in
     expect(page).to have_content("Insert message here:")
-    fill_in 'message', with: 'I love programming'
-    click_button "Submit"
     expect(page).to have_content('I love programming')
+  end
+end
+
+feature 'Time stamp' do
+
+  before do
+    Timecop.freeze(Time.local(2018,12,17,15,10,0))
+  end
+
+  after do
+    Timecop.return
+  end
+
+  scenario "Time is saved and shown with new message" do
+    open_page_fill_in
+    expect(page).to have_content('I love programming : 2018-12-17 15:10:00 +0000')
   end
 end

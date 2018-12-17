@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/admin/Projects/messages_app/spec/feature/features_spec.rb": [
+      "/Users/admin/Projects/messages_app/spec/features/features_spec.rb": [
         1,
         1,
         1,
@@ -13,6 +13,20 @@
         1,
         1,
         1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
         1,
         1,
         1,
@@ -23,21 +37,27 @@
         1,
         null,
         1,
+        null,
+        1,
         2,
         null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        3,
+        null,
         1,
         1,
         1,
         null,
         null,
-        null
-      ],
-      "/Users/admin/Projects/messages_app/lib/message.rb": [
-        1,
-        1,
         null,
         1,
         1,
+        1,
+        null,
         null,
         null
       ],
@@ -45,6 +65,6 @@
 
       ]
     },
-    "timestamp": 1545058014
+    "timestamp": 1545062211
   }
 }

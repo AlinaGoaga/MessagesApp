@@ -1,15 +1,19 @@
+require './lib/message.rb'
 require 'sinatra/base'
 
 class Messenger < Sinatra::Base
   enable :sessions
 
   get '/' do
-    @message = session[:message]
+    @text = session[:text]
+    @time = session[:time]
     erb :index
   end
 
   post '/message_storage' do
-    session[:message] = params[:message]
+    message = Message.new(params[:message])
+    session[:text] = message.text
+    session[:time] = message.time
     redirect "/"
   end
 
