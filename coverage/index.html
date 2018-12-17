@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-12-17T14:17:18+00:00">2018-12-17T14:17:18+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-12-17T14:46:54+00:00">2018-12-17T14:46:54+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">94.74%</span></span>
+    (<span class="covered_percent"><span class="green">100.0%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.02
+         1.06
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>4</b> files in total.
-    <b>19</b> relevant lines. 
-    <span class="green"><b>18</b> lines covered</span> and
-    <span class="red"><b>1</b> lines missed </span>
+    <b>21</b> relevant lines. 
+    <span class="green"><b>21</b> lines covered</span> and
+    <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -51,7 +51,7 @@
     <tbody>
       
       <tr>
-        <td class="strong"><a href="#c5674815cc13a1b4111ce3f7b4abbedba283d71e" class="src_link" title="lib/message.rb">lib/message.rb</a></td>
+        <td class="strong"><a href="#c9f73213980c0082120428dd22b0d017f9ca3d65" class="src_link" title="lib/message.rb">lib/message.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>7</td>
         <td>4</td>
@@ -61,17 +61,17 @@
       </tr>
       
       <tr>
-        <td class="strong"><a href="#66ae67f95e516c76d60c07a4b1a29607f5d508de" class="src_link" title="spec/feature/features_spec.rb">spec/feature/features_spec.rb</a></td>
-        <td class="yellow strong">88.89 %</td>
-        <td>14</td>
-        <td>9</td>
-        <td>8</td>
-        <td>1</td>
-        <td>0.9</td>
+        <td class="strong"><a href="#2e996fd4b3f492731b6a64f9337e35fe18ee52d7" class="src_link" title="spec/feature/features_spec.rb">spec/feature/features_spec.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>16</td>
+        <td>11</td>
+        <td>11</td>
+        <td>0</td>
+        <td>1.0</td>
       </tr>
       
       <tr>
-        <td class="strong"><a href="#54109a42f3c38b5e4f55309a4f7b21d4e3021a63" class="src_link" title="spec/message_spec.rb">spec/message_spec.rb</a></td>
+        <td class="strong"><a href="#27cb717fdb55abbdf1a8c48e3c361dee384c5c85" class="src_link" title="spec/message_spec.rb">spec/message_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>11</td>
         <td>6</td>
@@ -81,7 +81,7 @@
       </tr>
       
       <tr>
-        <td class="strong"><a href="#83ddab002a8b85a98a9e0a9e6055472891eae502" class="src_link" title="spec/messagehistory_spec.rb">spec/messagehistory_spec.rb</a></td>
+        <td class="strong"><a href="#ffd51b147b8c13f09f91d9362af8ad1dcf8d442b" class="src_link" title="spec/messagehistory_spec.rb">spec/messagehistory_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>0</td>
         <td>0</td>
@@ -106,7 +106,7 @@
     
       <div class="source_files">
       
-        <div class="source_table" id="c5674815cc13a1b4111ce3f7b4abbedba283d71e">
+        <div class="source_table" id="c9f73213980c0082120428dd22b0d017f9ca3d65">
   <div class="header">
     <h3>lib/message.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
@@ -167,14 +167,14 @@
 </div>
 
       
-        <div class="source_table" id="66ae67f95e516c76d60c07a4b1a29607f5d508de">
+        <div class="source_table" id="2e996fd4b3f492731b6a64f9337e35fe18ee52d7">
   <div class="header">
     <h3>spec/feature/features_spec.rb</h3>
-    <h4><span class="yellow">88.89 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>9</b> relevant lines. 
-      <span class="green"><b>8</b> lines covered</span> and
-      <span class="red"><b>1</b> lines missed.</span>
+      <b>11</b> relevant lines. 
+      <span class="green"><b>11</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
@@ -244,22 +244,34 @@
         <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
-          <code class="ruby">    fill_in &#39;new_message&#39;, with: &#39;I love programming&#39;</code>
+          <code class="ruby">    expect(page).to have_content(&quot;Insert message here:&quot;)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="12">
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
           
+          <code class="ruby">    fill_in &#39;message&#39;, with: &#39;I love programming&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_button &quot;Submit&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
           
           <code class="ruby">    expect(page).to have_content(&#39;I love programming&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="13">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby">end</code>
@@ -270,7 +282,7 @@
 </div>
 
       
-        <div class="source_table" id="54109a42f3c38b5e4f55309a4f7b21d4e3021a63">
+        <div class="source_table" id="27cb717fdb55abbdf1a8c48e3c361dee384c5c85">
   <div class="header">
     <h3>spec/message_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
@@ -355,7 +367,7 @@
 </div>
 
       
-        <div class="source_table" id="83ddab002a8b85a98a9e0a9e6055472891eae502">
+        <div class="source_table" id="ffd51b147b8c13f09f91d9362af8ad1dcf8d442b">
   <div class="header">
     <h3>spec/messagehistory_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>

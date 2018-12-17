@@ -8,8 +8,9 @@ end
 feature 'New message' do
   scenario 'user is allowed to create a new message' do
     visit('/')
-    expect(page).to have_content('Insert message here: ')
-    fill_in 'new_message', with: 'I love programming'
+    expect(page).to have_content("Insert message here:")
+    fill_in 'message', with: 'I love programming'
+    click_button "Submit"
     expect(page).to have_content('I love programming')
   end
 end

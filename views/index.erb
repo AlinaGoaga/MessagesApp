@@ -1,7 +1,11 @@
 <h1> My messenger app </h1>
 
 <form action="/message_storage" method="post">
-  <label for="message"> Insert message here:  </label> 
+  <label for="message"> Insert message here: </label>
   <input type="text" name="message"> <br>
   <input type="submit" value="Submit">
 </form>
+
+<% if @message %>
+<h2> <%= @message %> </h2>
+<% end %>
