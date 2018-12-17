@@ -1,7 +1,6 @@
 require 'time'
 
 class Message
-
   attr_reader :text, :time
 
   def initialize(text)
