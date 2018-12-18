@@ -8,6 +8,6 @@ class MessageHistory
   end
 
   def add_to_list(message = Message.new(text))
-    @list << { message.text => message.time }
+    @list << { 'text' => message.text, 'time' => message.time }
   end
 end

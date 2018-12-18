@@ -9,16 +9,15 @@
 <% if @list == [] %>
 <h1> You don't have any messages yet! </h1>
 <% else %>
-<% @list.each do |item| %>
-<% key = item.keys.first %>
-
+<% @list.sort_by!{ |k| k["time"]}.reverse! %>
+<% @list.each do |k| %>
 
     <div style="width:25em; float:left;">
-     <%= item.keys.first %>
+        <%= k["text"] %>
     </div>
 
     <div style="overflow:hidden">
-        <%= item[key] %>
+        <%= k["time"] %>
     </div>
 
 <% end %>

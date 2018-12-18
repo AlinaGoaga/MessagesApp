@@ -7,7 +7,7 @@ describe MessageHistory do
 
   describe '#add_to_list' do
     it 'adds a new message to the list of messages' do
-      expect(messagehistory.add_to_list(message1)).to eq([{ message1.text => message1.time }])
+      expect(messagehistory.add_to_list(message1)).to eq([{ 'text' => message1.text, 'time' => message1.time }])
     end
   end
 
@@ -15,7 +15,7 @@ describe MessageHistory do
     it 'returns the list of messages' do
       messagehistory.add_to_list(message1)
       messagehistory.add_to_list(message2)
-      expect(messagehistory.list).to eq [{ message1.text => message1.time }, { message2.text => message2.time }]
+      expect(messagehistory.list).to eq [{ 'text' => message1.text, 'time' => message1.time }, { 'text' => message2.text, 'time' => message2.time }]
     end
   end
 end
