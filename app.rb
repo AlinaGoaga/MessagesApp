@@ -32,9 +32,10 @@ class Messenger < Sinatra::Base
   end
 
   get '/messages/:id' do
-    @ref = params[:id]
     @message_history = session[:message_history]
     @list = @message_history.list
+    id = params[:id].to_i
+    @message = @list[id - 1]
     erb :message
   end
 
