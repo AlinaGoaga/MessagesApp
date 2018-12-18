@@ -3,9 +3,10 @@ require 'sinatra/base'
 
 class Messenger < Sinatra::Base
   enable :sessions
+  use Rack::Session::Pool, expire_after: 2_592_000
 
   get '/' do
-    session[:message_history] = MessageHistory.new
+    session[:message_history] ||= MessageHistory.new
     redirect '/index'
   end
 
