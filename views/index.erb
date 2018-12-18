@@ -13,7 +13,7 @@
 <% @list.each do |k| %>
 
     <div style="width:25em; float:left;">
-    <a href = "/messages/:id"> <%= k["text"].slice(0, 19) %> </a>
+    <a href = "/messages/<%=k["id"]%>"> <%= k["text"].slice(0, 19) %> </a>
     </div>
 
     <div style="overflow:hidden">

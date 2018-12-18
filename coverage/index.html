@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-12-18T15:55:25+00:00">2018-12-18T15:55:25+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-12-18T16:16:01+00:00">2018-12-18T16:16:01+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -51,7 +51,7 @@
     <tbody>
       
       <tr>
-        <td class="strong"><a href="#185566015f9f3a2651db42450d2ac17f810ac299" class="src_link" title="spec/features/features_spec.rb">spec/features/features_spec.rb</a></td>
+        <td class="strong"><a href="#c213fd173a8a3865974d74542b11510361fd988a" class="src_link" title="spec/features/features_spec.rb">spec/features/features_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>42</td>
         <td>27</td>
@@ -61,7 +61,7 @@
       </tr>
       
       <tr>
-        <td class="strong"><a href="#54109a42f3c38b5e4f55309a4f7b21d4e3021a63" class="src_link" title="spec/message_spec.rb">spec/message_spec.rb</a></td>
+        <td class="strong"><a href="#99b11dbfd4f7f1e0b5d966e4e1b479557ae28b33" class="src_link" title="spec/message_spec.rb">spec/message_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>31</td>
         <td>16</td>
@@ -71,7 +71,7 @@
       </tr>
       
       <tr>
-        <td class="strong"><a href="#83ddab002a8b85a98a9e0a9e6055472891eae502" class="src_link" title="spec/messagehistory_spec.rb">spec/messagehistory_spec.rb</a></td>
+        <td class="strong"><a href="#f49aa155e62e7ec84e1e6ff983d04ec9708c79ed" class="src_link" title="spec/messagehistory_spec.rb">spec/messagehistory_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>21</td>
         <td>13</td>
@@ -96,7 +96,7 @@
     
       <div class="source_files">
       
-        <div class="source_table" id="185566015f9f3a2651db42450d2ac17f810ac299">
+        <div class="source_table" id="c213fd173a8a3865974d74542b11510361fd988a">
   <div class="header">
     <h3>spec/features/features_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
@@ -367,7 +367,7 @@
 </div>
 
       
-        <div class="source_table" id="54109a42f3c38b5e4f55309a4f7b21d4e3021a63">
+        <div class="source_table" id="99b11dbfd4f7f1e0b5d966e4e1b479557ae28b33">
   <div class="header">
     <h3>spec/message_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
@@ -572,7 +572,7 @@
 </div>
 
       
-        <div class="source_table" id="83ddab002a8b85a98a9e0a9e6055472891eae502">
+        <div class="source_table" id="f49aa155e62e7ec84e1e6ff983d04ec9708c79ed">
   <div class="header">
     <h3>spec/messagehistory_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
@@ -613,13 +613,13 @@
         <li class="covered" data-hits="3" data-linenumber="5">
           <span class="hits">3</span>
           
-          <code class="ruby">  let(:message1) { double :message, text: &#39;I love programming&#39;, time: &#39;2018-12-17 15:10:00 +0000&#39; }</code>
+          <code class="ruby">  let(:message1) { double :message, text: &#39;I love programming&#39;, time: &#39;2018-12-17 15:10:00 +0000&#39;, id: 1 }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="6">
           <span class="hits">2</span>
           
-          <code class="ruby">  let(:message2) { double :message, text: &#39;I love swimming&#39;, time: &#39;2018-12-17 16:10:00 +0000&#39; }</code>
+          <code class="ruby">  let(:message2) { double :message, text: &#39;I love swimming&#39;, time: &#39;2018-12-17 16:10:00 +0000&#39;, id: 2 }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="7">
@@ -643,7 +643,7 @@
         <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(messagehistory.add_to_list(message1)).to eq([{ &#39;text&#39; =&gt; message1.text, &#39;time&#39; =&gt; message1.time }])</code>
+          <code class="ruby">      expect(messagehistory.add_to_list(message1)).to eq([{ &#39;text&#39; =&gt; message1.text, &#39;time&#39; =&gt; message1.time, &#39;id&#39; =&gt; message1.id }])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
@@ -691,7 +691,7 @@
         <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(messagehistory.list).to eq [{ &#39;text&#39; =&gt; message1.text, &#39;time&#39; =&gt; message1.time }, { &#39;text&#39; =&gt; message2.text, &#39;time&#39; =&gt; message2.time }]</code>
+          <code class="ruby">      expect(messagehistory.list).to eq [{ &#39;text&#39; =&gt; message1.text, &#39;time&#39; =&gt; message1.time, &#39;id&#39; =&gt; message1.id  }, { &#39;text&#39; =&gt; message2.text, &#39;time&#39; =&gt; message2.time, &#39;id&#39; =&gt; message2.id }]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">

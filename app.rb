@@ -31,5 +31,12 @@ class Messenger < Sinatra::Base
     redirect '/index'
   end
 
+  get '/messages/:id' do
+    @ref = params[:id]
+    @message_history = session[:message_history]
+    @list = @message_history.list
+    erb :message
+  end
+
   run! if app_file == $PROGRAM_NAME
 end

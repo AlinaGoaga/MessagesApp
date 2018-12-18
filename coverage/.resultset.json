@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/alinagoaga/Desktop/skills-workshops/week-4/messages_app/spec/features/features_spec.rb": [
+      "/Users/jayway/makers/projects/week-4/ALINAmessageapp/messages_app/spec/features/features_spec.rb": [
         1,
         1,
         1,
@@ -45,7 +45,7 @@
         null,
         null
       ],
-      "/Users/alinagoaga/Desktop/skills-workshops/week-4/messages_app/spec/message_spec.rb": [
+      "/Users/jayway/makers/projects/week-4/ALINAmessageapp/messages_app/spec/message_spec.rb": [
         1,
         null,
         1,
@@ -78,7 +78,7 @@
         null,
         null
       ],
-      "/Users/alinagoaga/Desktop/skills-workshops/week-4/messages_app/spec/messagehistory_spec.rb": [
+      "/Users/jayway/makers/projects/week-4/ALINAmessageapp/messages_app/spec/messagehistory_spec.rb": [
         1,
         null,
         1,
@@ -102,6 +102,6 @@
         null
       ]
     },
-    "timestamp": 1545148525
+    "timestamp": 1545149761
   }
 }
