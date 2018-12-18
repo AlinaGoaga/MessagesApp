@@ -4,9 +4,14 @@ require 'sinatra/base'
 class Messenger < Sinatra::Base
   enable :sessions
   use Rack::Session::Pool, expire_after: 2_592_000
+  #
+  # before do
+  #   session[:id] || = 1
+  # end
 
   get '/' do
     session[:message_history] ||= MessageHistory.new
+    session[:id] ||= 1
     redirect '/index'
   end
 
@@ -18,8 +23,11 @@ class Messenger < Sinatra::Base
 
   post '/message_storage' do
     @message_history = session[:message_history]
-    message = Message.new(params[:message])
+    id = session[:id]
+    message = Message.new(params[:message], id)
     @message_history.add_to_list(message)
+    id += 1
+    session[:id] = id
     redirect '/index'
   end
 
