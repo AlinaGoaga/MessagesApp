@@ -7,7 +7,7 @@ class MessageHistory
     @list = []
   end
 
-  def add_to_list(message = Message.new(text))
+  def add_to_list(message)
     @list << { 'text' => message.text, 'time' => message.time, 'id' => message.id }
   end
 end

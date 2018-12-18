@@ -4,10 +4,6 @@ require 'sinatra/base'
 class Messenger < Sinatra::Base
   enable :sessions
   use Rack::Session::Pool, expire_after: 2_592_000
-  #
-  # before do
-  #   session[:id] || = 1
-  # end
 
   get '/' do
     session[:message_history] ||= MessageHistory.new
@@ -35,7 +31,7 @@ class Messenger < Sinatra::Base
     @message_history = session[:message_history]
     @list = @message_history.list
     id = params[:id].to_i
-    @message = @list[id - 1]
+    @message = @list.find { |x| x['id'] == id }
     erb :message
   end
 
