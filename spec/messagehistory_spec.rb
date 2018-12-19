@@ -15,7 +15,14 @@ describe MessageHistory do
     it 'returns the list of messages' do
       messagehistory.add_to_list(message1)
       messagehistory.add_to_list(message2)
-      expect(messagehistory.list).to eq [{ 'text' => message1.text, 'time' => message1.time, 'id' => message1.id  }, { 'text' => message2.text, 'time' => message2.time, 'id' => message2.id }]
+      expect(messagehistory.list).to eq [{ 'text' => message1.text, 'time' => message1.time, 'id' => message1.id }, { 'text' => message2.text, 'time' => message2.time, 'id' => message2.id }]
+    end
+  end
+
+  describe '#find' do
+    it 'retrives a message by its id' do
+      messagehistory.add_to_list(message1)
+      expect(messagehistory.find(message1.id)).to eq 'I love programming'
     end
   end
 end

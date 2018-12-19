@@ -12,26 +12,20 @@ class Messenger < Sinatra::Base
   end
 
   get '/index' do
-    @message_history = session[:message_history]
-    @list = @message_history.list
+    @list = session[:message_history].list
     erb :index
   end
 
   post '/message_storage' do
-    @message_history = session[:message_history]
-    id = session[:id]
-    message = Message.new(params[:message], id)
-    @message_history.add_to_list(message)
-    id += 1
-    session[:id] = id
+    message = Message.new(params[:message], session[:id])
+    session[:message_history].add_to_list(message)
+    session[:id] += 1
     redirect '/index'
   end
 
   get '/messages/:id' do
-    @message_history = session[:message_history]
-    @list = @message_history.list
     id = params[:id].to_i
-    @message = @list.find { |x| x['id'] == id }
+    @message = session[:message_history].find(id)
     erb :message
   end
 

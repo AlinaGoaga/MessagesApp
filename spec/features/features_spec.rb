@@ -40,3 +40,13 @@ feature 'Multiple messages' do
     expect(page).to have_content("I love swimming\n2018-12-17 16:10:00 +0000")
   end
 end
+
+feature 'Show individual message' do
+  scenario 'show individual message when user clicks on the message text' do
+    open_page_fill_in
+    fill_in 'message', with: 'I love swimming'
+    click_button 'Submit'
+    click_link 'I love swimming'
+    expect(page).to have_content('I love swimming')
+  end
+end
