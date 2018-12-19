@@ -19,6 +19,14 @@ describe MessageHistory do
     end
   end
 
+  describe '.all' do
+    it 'returns a list of messages' do
+      messages = MessageHistory.all
+      expect(messages).to include 'It is a good day'
+      expect(messages).to include 'And I am feeling good'
+    end
+  end
+
   describe '#find' do
     it 'retrives a message by its id' do
       messagehistory.add_to_list(message1)

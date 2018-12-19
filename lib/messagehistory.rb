@@ -1,4 +1,5 @@
 require_relative 'message'
+require 'pg'
 
 class MessageHistory
   attr_reader :list
@@ -14,5 +15,11 @@ class MessageHistory
   def find(id)
     message = @list.find { |msg| msg['id'] == id }
     message['text']
+  end
+
+  def self.all
+    connection = PG.connect(dbname: 'messages_manager')
+    result = connection.exec('SELECT * FROM messages;')
+    result.map { |message| message['text'] }
   end
 end
