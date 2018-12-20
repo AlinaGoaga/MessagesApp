@@ -1,24 +1,17 @@
 <h1> My messenger app </h1>
 
-<form action="/message_storage" method="post">
+<form action="/message" method="post">
   <label for="message"> Insert message here: </label>
-  <input type="text" name="message"> <br>
+  <input type="text" name="content"> <br>
   <input type="submit" value="Submit">
 </form>
 
-<% if @list == [] %>
+<% if @messages == [] %>
 <h1> You don't have any messages yet! </h1>
 <% else %>
-<% @list.sort_by!{ |k| k["time"]}.reverse! %>
-<% @list.each do |k| %>
-
-    <div style="width:25em; float:left;">
-    <a href = "/messages/<%=k["id"]%>"> <%= k["text"].slice(0, 19) %> </a>
-    </div>
-
-    <div style="overflow:hidden">
-        <%= k["time"] %>
-    </div>
-
+<% @messages.reverse.each do |message| %>
+<div>
+  <%= message.created_at %>: <a href=<%="/messages/#{message.id}"%>><%= message.content %></a>
+</div>
 <% end %>
 <% end %>

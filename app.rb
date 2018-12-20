@@ -1,33 +1,22 @@
-require './lib/messagehistory.rb'
+ENV['RACK_ENV'] ||= 'development'
+
 require 'sinatra/base'
+require './lib/message'
+require './config/data_mapper'
 
-class Messenger < Sinatra::Base
-  enable :sessions
-  use Rack::Session::Pool, expire_after: 2_592_000
-
+class MessageApp < Sinatra::Base
   get '/' do
-    session[:message_history] ||= MessageHistory.new
-    session[:id] ||= 1
-    redirect '/index'
+    @messages = Message.all
+    erb(:index)
   end
 
-  get '/index' do
-    @list = session[:message_history].list
-    erb :index
-  end
-
-  post '/message_storage' do
-    message = Message.new(params[:message], session[:id])
-    session[:message_history].add_to_list(message)
-    session[:id] += 1
-    redirect '/index'
+  post '/message' do
+    Message.create(content: params[:content])
+    redirect '/'
   end
 
   get '/messages/:id' do
-    id = params[:id].to_i
-    @message = session[:message_history].find(id)
-    erb :message
+    @message = Message.get(params[:id])
+    erb(:show)
   end
-
-  run! if app_file == $PROGRAM_NAME
 end
