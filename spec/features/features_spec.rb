@@ -50,3 +50,38 @@
 #     expect(page).to have_content('I love swimming')
 #   end
 # end
+
+RSpec.feature 'Messages' do
+  context 'Creating' do
+    scenario 'A user can submit text and see it with a timestamp' do
+      fill_in_msg
+      expect(page).to have_content 'I love summer!'
+    end
+
+    scenario 'A user can submit text and it redirects back to the index' do
+      fill_in_msg
+      expect(page.current_path).to eq('/')
+    end
+
+    scenario 'A user can submit many messages and see them all' do
+      fill_in_msg
+      fill_in :content, with: 'I love life!'
+      click_button 'Submit'
+      fill_in :content, with: 'I love nature!'
+      click_button 'Submit'
+      expect(page).to have_content 'I love summer!'
+      expect(page).to have_content 'I love life!'
+      expect(page).to have_content 'I love nature!'
+    end
+  end
+
+  context 'Seeing a message' do
+    scenario 'click on a message shows the full text of the message' do
+      message = Message.create(content: 'Create message in db!')
+      visit '/'
+      click_on 'Create message in db!'
+      expect(page.current_path).to eq("/messages/#{message.id}")
+      expect(page).to have_content('Create message in db!')
+    end
+  end
+end
