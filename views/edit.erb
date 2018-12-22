@@ -1,6 +1,6 @@
 <form action="/messages/<%= @message.id %>" method="post">
   <input id="hidden" type="hidden" name="_method" value="patch">
   <h3> What would you like to replace "<%= @message.content %>" with? </h3>
-  <input type="text" name="content" value="content">
+  <input type="text" name="content">
   <input type="submit" value="Submit">
 </form>

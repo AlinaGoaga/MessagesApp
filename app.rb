@@ -35,7 +35,8 @@ class MessageApp < Sinatra::Base
     @message = Message.get(params[:id])
     @message.content = params[:content]
     @message.save
-    redirect "/messages/#{params[:id].to_i}"
+    # redirect "/messages/#{params[:id].to_i}"
+    redirect '/'
   end
 
 end
