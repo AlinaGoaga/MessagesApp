@@ -84,4 +84,17 @@ RSpec.feature 'Messages' do
       expect(page).to have_content('Create message in db!')
     end
   end
+
+  context 'Editing a message' do
+    scenario 'A user can edit a message that he has submitted' do
+      message = Message.create(content: 'Create another message in db!')
+      visit '/'
+      click_on 'Create another message in db!'
+      click_on 'Edit message'
+      fill_in :content, with: 'I am changing the message!'
+      click_on 'Submit'
+      expect(page.current_path).to eq("/messages/#{message.id}")
+      expect(page).to have_content("I am changing the message!")
+    end
+  end
 end
