@@ -11,5 +11,9 @@
   <form action="/messages/<%= @message.id %>/edit" method="get">
     <input type="submit" value="Edit message">
   </form>
+  <form action="/messages/<%= @message.id %>/delete" method="post">
+    <input id="hidden" type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete message">
+  </form>
 </body>
 </html>
