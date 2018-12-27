@@ -1,4 +1,4 @@
-ENV['RACK_ENV'] ||= 'development'
+# ENV['RACK_ENV'] ||= 'development' - this is set up by default in Sinatra  Sinatra::Base.development? == true
 
 require 'sinatra/base'
 require './lib/message'

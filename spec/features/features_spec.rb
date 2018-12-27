@@ -105,8 +105,25 @@ RSpec.feature 'Messages' do
       click_on 'Create another message in db!'
       click_on 'Delete message'
       expect(page.current_path).to eq("/")
-      expect(page).to have_no_content("Create another message in db!") 
+      expect(page).to have_no_content("Create another message in db!")
     end
   end
 
 end
+
+# RSpec.feature 'Tags' do
+#   context 'Creating' do
+#     scenario 'A user can attach a tag to a message' do
+#       fill_in_msg
+#       click_on 'Add tag'
+#       expect(page).to have_content 'Love'
+#     end
+#
+#     scenario 'A user can attach a tag and it gets redirected to the index page' do
+#       fill_in_msg
+#       click_on 'Add tag'
+#       expect(page.current_path).to eq('/')
+#
+#     end
+#   end
+# end
