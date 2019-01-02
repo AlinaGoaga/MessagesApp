@@ -1,7 +1,6 @@
 <form action="/message" method="post">
-  <label for="message"> Insert message here: </label>
-  <input type="text" name="content"> <br>
-  <input type="submit" value="Submit" style="margin: 1em">
+  <h3> Insert message: </h3>
+  <%= erb :form_partial %>
 </form>
 
 <% if @messages == [] %>
