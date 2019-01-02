@@ -4,6 +4,7 @@ require 'sinatra/base'
 require './lib/message'
 require './config/data_mapper'
 require 'pry'
+require 'haml'
 
 class MessageApp < Sinatra::Base
 
@@ -11,7 +12,7 @@ class MessageApp < Sinatra::Base
 
   get '/' do
     @messages = Message.all
-    erb(:index)
+    erb :index
   end
 
   post '/message' do
@@ -28,7 +29,7 @@ class MessageApp < Sinatra::Base
   get '/messages/:id/edit' do
     # page for individual messages to be displayed
     @message = Message.get(params[:id])
-    erb :edit
+    erb :edit, :layout => :edit_page_layout  
   end
 
   patch '/messages/:id' do # edit action

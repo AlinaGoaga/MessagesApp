@@ -112,18 +112,18 @@ RSpec.feature 'Messages' do
 end
 
 # RSpec.feature 'Tags' do
-#   context 'Creating' do
-#     scenario 'A user can attach a tag to a message' do
-#       fill_in_msg
-#       click_on 'Add tag'
-#       expect(page).to have_content 'Love'
-#     end
-#
-#     scenario 'A user can attach a tag and it gets redirected to the index page' do
-#       fill_in_msg
-#       click_on 'Add tag'
-#       expect(page.current_path).to eq('/')
-#
-#     end
-#   end
-# end
+  # context 'Creating' do
+  #   scenario 'A user can attach a tag to a message' do
+  #     fill_in_msg
+  #     click_on 'Add tag'
+  #     expect(page).to have_content 'Love'
+  #   end
+  #
+  #   scenario 'A user can attach a tag and it gets redirected to the index page' do
+  #     fill_in_msg
+  #     click_on 'Add tag'
+  #     expect(page.current_path).to eq('/')
+  #
+  #   end
+  # end
+# end 
