@@ -4,7 +4,6 @@ require 'sinatra/base'
 require './lib/message_and_tag'
 require './config/data_mapper'
 require 'pry'
-require 'haml'
 
 class MessageApp < Sinatra::Base
 
@@ -12,6 +11,7 @@ class MessageApp < Sinatra::Base
 
   get '/' do
     @messages = Message.all
+    @tags = Tag.all
     erb :index
   end
 
@@ -38,13 +38,13 @@ class MessageApp < Sinatra::Base
   end
 
   delete '/messages/:id/delete' do
+    Message.get(params[:id]).tags.destroy if Tag.all.count != 0
     Message.get(params[:id]).destroy
     redirect '/'
   end
 
-  post '/tags' do
-    Tag.create(tag_content: params[:tag_content])
-    # find a way to retrieve the message_id that the tag refers to when creating the tag
+  post '/messages/:id/tags' do
+    Tag.create(tag_content: params[:tag_content], message_id: params[:id])
     redirect '/'
   end
 

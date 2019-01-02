@@ -16,7 +16,6 @@ class Tag
 
   property :tag_id, Serial
   property :tag_content, Text
-  # property :id, Serial ? - Should contain the key for the message
 
   belongs_to :message
 

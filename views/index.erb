@@ -7,8 +7,11 @@
 <h3> You don't have any messages yet! </h3>
 <% else %>
 <% @messages.reverse.each do |message| %>
-<div>
+  <div>
   <%= message.created_at %>: <a href=<%="/messages/#{message.id}"%>><%= message.content %></a>
-</div>
+      <% @tags.each do |tag| %>
+      <%= tag.tag_content if tag.message_id == message.id %>
+      <% end %>
+  </div>
 <% end %>
 <% end %>
