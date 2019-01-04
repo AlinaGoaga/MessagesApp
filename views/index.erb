@@ -8,7 +8,7 @@
 <% else %>
 <% @messages.reverse.each do |message| %>
   <div>
-  <%= message.created_at %>: <a href=<%="/messages/#{message.id}"%>><%= message.content %></a>
+  <%= message.created_at %>: <a href=<%="/messages/#{message.id}"%>><%= message.content[0..19] %></a>
       <% message.tags.each do |tag| %>
       <a href=<%="/tags/#{tag.id}/messages"%>><%= tag.tag_content %></a>
       <% end %>
