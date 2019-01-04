@@ -44,8 +44,17 @@ class MessageApp < Sinatra::Base
   end
 
   post '/messages/:id/tags' do
-    Tag.create(tag_content: params[:tag_content], message_id: params[:id])
+    message = Message.get(params[:id])
+    tag = Tag.first_or_create(tag_content: params[:tag_content])
+    message.tags << tag
+    message.save
     redirect '/'
   end
-
+  # 
+  # get '/tag' do
+  #   @messages = Message.all
+  #   @tag = Tag.get(params[:id])
+  #   erb :show_tags
+  #   redirect '/'
+  # end
 end

@@ -7,16 +7,16 @@ class Message
   property :content, Text
   property :created_at, DateTime
 
-  has n, :tags
+  has n, :tags, :through => Resource
 
 end
 
 class Tag
   include DataMapper::Resource
 
-  property :tag_id, Serial
+  property :id, Serial
   property :tag_content, Text
 
-  belongs_to :message
+  has n, :messages, :through => Resource
 
 end

@@ -15,6 +15,7 @@ namespace :db do
   end
 
   desc "auto_migrate"
+  
   task :auto_migrate do
     DataMapper.auto_migrate!
     puts 'Migration successful!'
