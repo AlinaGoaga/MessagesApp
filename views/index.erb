@@ -10,7 +10,7 @@
   <div>
   <%= message.created_at %>: <a href=<%="/messages/#{message.id}"%>><%= message.content %></a>
       <% message.tags.each do |tag| %>
-      <%= tag.tag_content %>
+      <a href=<%="/tags/#{tag.id}/messages"%>><%= tag.tag_content %></a>
       <% end %>
   </div>
 <% end %>

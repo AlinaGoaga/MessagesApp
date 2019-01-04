@@ -50,11 +50,11 @@ class MessageApp < Sinatra::Base
     message.save
     redirect '/'
   end
-  # 
-  # get '/tag' do
-  #   @messages = Message.all
-  #   @tag = Tag.get(params[:id])
-  #   erb :show_tags
-  #   redirect '/'
-  # end
+
+  get '/tags/:id/messages' do
+    tag = Tag.get(params[:id])
+    @messages = tag.messages
+    erb :show_messages_for_tag
+    redirect '/'
+  end
 end
