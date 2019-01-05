@@ -79,7 +79,8 @@ RSpec.feature 'Messages' do
     scenario 'click on a message shows the full text of the message' do
       message = Message.create(content: 'Create message in db!')
       visit '/'
-      click_on 'Create message in db!'
+      trunchiated_message = 'Create message in db!'[0..19]
+      click_on trunchiated_message
       expect(page.current_path).to eq("/messages/#{message.id}")
       expect(page).to have_content('Create message in db!')
     end
@@ -87,25 +88,25 @@ RSpec.feature 'Messages' do
 
   context 'Editing a message' do
     scenario 'A user can edit a message that he has submitted' do
-      message = Message.create(content: 'Create another message in db!')
+      message = Message.create(content: 'Good morning!')
       visit '/'
-      click_on 'Create another message in db!'
+      click_on 'Good morning!'
       click_on 'Edit message'
-      fill_in :content, with: 'I am changing the message!'
+      fill_in :content, with: 'Good evening!'
       click_on 'Submit'
       expect(page.current_path).to eq("/")
-      expect(page).to have_content("I am changing the message!")
+      expect(page).to have_content 'Good evening!'
     end
   end
 
   context 'Deleting a message' do
-    scenario 'A user can edit a message that he has submitted' do
-      message = Message.create(content: 'Create another message in db!')
+    scenario 'A user can delete a message that he has submitted' do
+      message = Message.create(content: 'Good morning!')
       visit '/'
-      click_on 'Create another message in db!'
+      click_on 'Good morning!'
       click_on 'Delete message'
       expect(page.current_path).to eq("/")
-      expect(page).to have_no_content("Create another message in db!")
+      expect(page).to have_no_content("Good morning!")
     end
   end
 

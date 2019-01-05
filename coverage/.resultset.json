@@ -86,6 +86,7 @@
         1,
         1,
         1,
+        1,
         null,
         null,
         null,
@@ -117,8 +118,6 @@
       ],
       "/Users/alinagoaga/Desktop/skills-workshops/week-4/messages_app/spec/features/features_tags_spec.rb": [
         1,
-        null,
-        1,
         1,
         1,
         1,
@@ -135,9 +134,11 @@
         1,
         1,
         1,
-        1,
-        1,
         null,
+        null,
+        null,
+        null,
+        1,
         1,
         1,
         null,
@@ -217,6 +218,6 @@
         null
       ]
     },
-    "timestamp": 1546614375
+    "timestamp": 1546688042
   }
 }

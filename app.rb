@@ -11,7 +11,6 @@ class MessageApp < Sinatra::Base
 
   get '/' do
     @messages = Message.all
-    @tags = Tag.all
     erb :index
   end
 
@@ -55,6 +54,5 @@ class MessageApp < Sinatra::Base
     tag = Tag.get(params[:id])
     @messages = tag.messages
     erb :show_messages_for_tag
-    redirect '/'
   end
 end

@@ -7,11 +7,16 @@
 <h3> You don't have any messages yet! </h3>
 <% else %>
 <% @messages.reverse.each do |message| %>
-  <div>
+<div id="message-#{message.id}">
   <%= message.created_at %>: <a href=<%="/messages/#{message.id}"%>><%= message.content[0..19] %></a>
-      <% message.tags.each do |tag| %>
-      <a href=<%="/tags/#{tag.id}/messages"%>><%= tag.tag_content %></a>
-      <% end %>
-  </div>
-<% end %>
+  <% message.tags.each do |tag| %>
+  <a href=<%="/tags/#{tag.id}/messages"%>><%= tag.tag_content %></a>
+  <% end %>
+  <form action="/messages/<%= message.id %>/tags" method="post">
+    Add tag:
+    <input type="text" name="tag_content"> <br>
+    <input type="submit" value="Done" style="margin: 1em">
+  </form>
+ <% end %>
+</div>
 <% end %>

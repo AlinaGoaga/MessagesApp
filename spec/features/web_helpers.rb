@@ -6,10 +6,8 @@ end
 
 def add_tags
   fill_in_msg
-  click_on 'I love summer!'
   fill_in :tag_content, with: 'Love'
-  click_button 'Submit'
-  click_on 'I love summer!'
+  click_button 'Done'
   fill_in :tag_content, with: 'Season'
-  click_button 'Submit'
+  click_button 'Done'
 end

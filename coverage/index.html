@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-01-04T15:06:15+00:00">2019-01-04T15:06:15+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-01-05T11:34:02+00:00">2019-01-05T11:34:02+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -32,8 +32,8 @@
   <a name="AllFiles"></a>
   <div>
     <b>4</b> files in total.
-    <b>61</b> relevant lines. 
-    <span class="green"><b>61</b> lines covered</span> and
+    <b>60</b> relevant lines. 
+    <span class="green"><b>60</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -53,9 +53,9 @@
       <tr>
         <td class="strong"><a href="#fa02a78fa4d1391528bade64f7a4f26c1db94125" class="src_link" title="spec/features/features_messages_spec.rb">spec/features/features_messages_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>112</td>
-        <td>42</td>
-        <td>42</td>
+        <td>113</td>
+        <td>43</td>
+        <td>43</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -64,8 +64,8 @@
         <td class="strong"><a href="#af9e695dab7189d85e518ac7e4ef10c331dd639d" class="src_link" title="spec/features/features_tags_spec.rb">spec/features/features_tags_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>28</td>
-        <td>19</td>
-        <td>19</td>
+        <td>17</td>
+        <td>17</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -111,8 +111,8 @@
     <h3>spec/features/features_messages_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>42</b> relevant lines. 
-      <span class="green"><b>42</b> lines covered</span> and
+      <b>43</b> relevant lines. 
+      <span class="green"><b>43</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -609,184 +609,190 @@
         <li class="covered" data-hits="1" data-linenumber="82">
           <span class="hits">1</span>
           
-          <code class="ruby">      click_on &#39;Create message in db!&#39;</code>
+          <code class="ruby">      trunchiated_message = &#39;Create message in db!&#39;[0..19]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="83">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(page.current_path).to eq(&quot;/messages/#{message.id}&quot;)</code>
+          <code class="ruby">      click_on trunchiated_message</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="84">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(page).to have_content(&#39;Create message in db!&#39;)</code>
+          <code class="ruby">      expect(page.current_path).to eq(&quot;/messages/#{message.id}&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="85">
+        <li class="covered" data-hits="1" data-linenumber="85">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      expect(page).to have_content(&#39;Create message in db!&#39;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="86">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="87">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="88">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="88">
           
-          <code class="ruby">  context &#39;Editing a message&#39; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="89">
           <span class="hits">1</span>
           
-          <code class="ruby">    scenario &#39;A user can edit a message that he has submitted&#39; do</code>
+          <code class="ruby">  context &#39;Editing a message&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="90">
           <span class="hits">1</span>
           
-          <code class="ruby">      message = Message.create(content: &#39;Create another message in db!&#39;)</code>
+          <code class="ruby">    scenario &#39;A user can edit a message that he has submitted&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="91">
           <span class="hits">1</span>
           
-          <code class="ruby">      visit &#39;/&#39;</code>
+          <code class="ruby">      message = Message.create(content: &#39;Good morning!&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="92">
           <span class="hits">1</span>
           
-          <code class="ruby">      click_on &#39;Create another message in db!&#39;</code>
+          <code class="ruby">      visit &#39;/&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="93">
           <span class="hits">1</span>
           
-          <code class="ruby">      click_on &#39;Edit message&#39;</code>
+          <code class="ruby">      click_on &#39;Good morning!&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="94">
           <span class="hits">1</span>
           
-          <code class="ruby">      fill_in :content, with: &#39;I am changing the message!&#39;</code>
+          <code class="ruby">      click_on &#39;Edit message&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="95">
           <span class="hits">1</span>
           
-          <code class="ruby">      click_on &#39;Submit&#39;</code>
+          <code class="ruby">      fill_in :content, with: &#39;Good evening!&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="96">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(page.current_path).to eq(&quot;/&quot;)</code>
+          <code class="ruby">      click_on &#39;Submit&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="97">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(page).to have_content(&quot;I am changing the message!&quot;)</code>
+          <code class="ruby">      expect(page.current_path).to eq(&quot;/&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="98">
+        <li class="covered" data-hits="1" data-linenumber="98">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      expect(page).to have_content &#39;Good evening!&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="99">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="100">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="101">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="101">
           
-          <code class="ruby">  context &#39;Deleting a message&#39; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="102">
           <span class="hits">1</span>
           
-          <code class="ruby">    scenario &#39;A user can edit a message that he has submitted&#39; do</code>
+          <code class="ruby">  context &#39;Deleting a message&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="103">
           <span class="hits">1</span>
           
-          <code class="ruby">      message = Message.create(content: &#39;Create another message in db!&#39;)</code>
+          <code class="ruby">    scenario &#39;A user can delete a message that he has submitted&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="104">
           <span class="hits">1</span>
           
-          <code class="ruby">      visit &#39;/&#39;</code>
+          <code class="ruby">      message = Message.create(content: &#39;Good morning!&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="105">
           <span class="hits">1</span>
           
-          <code class="ruby">      click_on &#39;Create another message in db!&#39;</code>
+          <code class="ruby">      visit &#39;/&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="106">
           <span class="hits">1</span>
           
-          <code class="ruby">      click_on &#39;Delete message&#39;</code>
+          <code class="ruby">      click_on &#39;Good morning!&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="107">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(page.current_path).to eq(&quot;/&quot;)</code>
+          <code class="ruby">      click_on &#39;Delete message&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="108">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(page).to have_no_content(&quot;Create another message in db!&quot;)</code>
+          <code class="ruby">      expect(page.current_path).to eq(&quot;/&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="109">
+        <li class="covered" data-hits="1" data-linenumber="109">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      expect(page).to have_no_content(&quot;Good morning!&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="110">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="111">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="112">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="113">
           
           
           <code class="ruby">end</code>
@@ -802,8 +808,8 @@
     <h3>spec/features/features_tags_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>19</b> relevant lines. 
-      <span class="green"><b>19</b> lines covered</span> and
+      <b>17</b> relevant lines. 
+      <span class="green"><b>17</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -814,133 +820,133 @@
         <li class="covered" data-hits="1" data-linenumber="1">
           <span class="hits">1</span>
           
-          <code class="ruby">require &#39;pry&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="2">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="3">
-          <span class="hits">1</span>
-          
           <code class="ruby">RSpec.feature &#39;Tags&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="4">
+        <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
           <code class="ruby">  context &#39;Creating&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="5">
+        <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
           <code class="ruby">    scenario &#39;A user can attach multiple tags to a message and it gets redirected to the index page&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="6">
+        <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
           <code class="ruby">      add_tags</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="7">
+        <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
           <code class="ruby">      expect(page).to have_content &#39;Love&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="8">
+        <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
           <code class="ruby">      expect(page).to have_content &#39;Season&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="9">
+        <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
           <code class="ruby">      expect(page.current_path).to eq(&#39;/&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="never" data-hits="" data-linenumber="8">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="11">
+        <li class="never" data-hits="" data-linenumber="9">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="13">
+        <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
           <code class="ruby">  context &#39;Messages sharing a tag&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="14">
+        <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
           <code class="ruby">    scenario &#39;A user can click on a tag and it shows all the messages that share that tag&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="15">
+        <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
           <code class="ruby">      add_tags</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="16">
+        <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
           <code class="ruby">      fill_in :content, with: &#39;I love winter!&#39;</code>
         </li>
       
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      click_button &#39;Submit&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      find_all(&quot;[name=tag_content]&quot;).first.fill_in with: &#39;Season&#39;</code>
+        </li>
+      
         <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
-          <code class="ruby">      click_button &#39;Submit&#39;</code>
+          <code class="ruby">      find_all(&quot;[value=Done]&quot;).first.click</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="18">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="18">
           
-          <code class="ruby">      click_on &#39;I love winter!&#39;</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="19">
-          <span class="hits">1</span>
           
-          <code class="ruby">      fill_in :tag_content, with: &#39;Season&#39;</code>
+          <code class="ruby">      #</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="20">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="19">
           
-          <code class="ruby">      click_button &#39;Submit&#39;</code>
+          
+          <code class="ruby">      # require &#39;pry&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="21">
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby">      # binding.pry</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby">      # click_button &#39;Done&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="22">
           <span class="hits">1</span>
           
           <code class="ruby">      click_on(&#39;Season&#39;, :match =&gt; :first)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="22">
-          
-          
-          <code class="ruby">      # there will be more than one Season button here</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="23">

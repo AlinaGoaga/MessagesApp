@@ -13,9 +13,8 @@ RSpec.feature 'Tags' do
       add_tags
       fill_in :content, with: 'I love winter!'
       click_button 'Submit'
-      click_on 'I love winter!'
-      fill_in :tag_content, with: 'Season'
-      click_button 'Submit'
+      find_all("[name=tag_content]").first.fill_in with: 'Season'
+      find_all("[value=Done]").first.click
       click_on('Season', :match => :first)
       expect(page).to have_content 'I love summer!'
       expect(page).to have_content 'I love winter!'

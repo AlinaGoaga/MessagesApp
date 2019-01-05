@@ -15,10 +15,5 @@
     <input id="hidden" type="hidden" name="_method" value="delete">
     <input type="submit" value="Delete message">
   </form>
-  <form action="/messages/<%= @message.id %>/tags" method="post">
-    Add tag:
-    <input type="text" name="tag_content"> <br>
-    <input type="submit" value="Submit" style="margin: 1em">
-  </form>
 </body>
 </html>
