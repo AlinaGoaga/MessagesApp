@@ -1,8 +1,8 @@
-  <div><%= @message.created_at %>: <span><%= @message.content %></span></div>
+  <div><%= @message.created_at.strftime("at %I:%M%p on %m/%d/%Y") %>: <span><%= @message.content %></span></div>
   <form action="/messages/<%= @message.id %>/edit" method="get">
-    <input type="submit" value="Edit message">
+    <input type="submit" value="Edit message" style="margin: 1em" class="btn btn-outline-primary btn-sm">
   </form>
   <form action="/messages/<%= @message.id %>/delete" method="post">
     <input id="hidden" type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete message">
+    <input type="submit" value="Delete message" style="margin: 1em" class="btn btn-outline-primary btn-sm">
   </form>

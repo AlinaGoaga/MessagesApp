@@ -10,12 +10,12 @@ You don't have any messages yet!
 <div id="message-#{message.id}">
   <%= message.created_at.strftime("at %I:%M%p on %m/%d/%Y") %>: <a href=<%="/messages/#{message.id}"%>><%= message.content[0..19] %></a>
   <% message.tags.each do |tag| %>
-  <a href=<%="/tags/#{tag.id}/messages"%>><%= tag.tag_content %></a>
+  <a class="badge badge-pill badge-info" href=<%="/tags/#{tag.id}/messages"%>><%= tag.tag_content %></a>
   <% end %>
   <form action="/messages/<%= message.id %>/tags" method="post">
     Add tag:
     <input type="text" name="tag_content"> <br>
-    <input type="submit" value="Done" style="margin: 1em">
+    <input type="submit" value="Done" style="margin: 1em" class="btn btn-outline-secondary btn-sm">
   </form>
  <% end %>
 </div>
