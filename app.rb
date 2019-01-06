@@ -26,7 +26,7 @@ class MessageApp < Sinatra::Base
 
   get '/messages/:id/edit' do
     @message = Message.get(params[:id])
-    erb :edit, :layout => :edit_page_layout
+    erb :edit
   end
 
   patch '/messages/:id' do

@@ -1,14 +1,14 @@
 <form action="/message" method="post">
-  <h3> Insert message: </h3>
+  Insert message:
   <%= erb :form_partial %>
 </form>
 
 <% if @messages == [] %>
-<h3> You don't have any messages yet! </h3>
+You don't have any messages yet!
 <% else %>
 <% @messages.reverse.each do |message| %>
 <div id="message-#{message.id}">
-  <%= message.created_at %>: <a href=<%="/messages/#{message.id}"%>><%= message.content[0..19] %></a>
+  <%= message.created_at.strftime("at %I:%M%p on %m/%d/%Y") %>: <a href=<%="/messages/#{message.id}"%>><%= message.content[0..19] %></a>
   <% message.tags.each do |tag| %>
   <a href=<%="/tags/#{tag.id}/messages"%>><%= tag.tag_content %></a>
   <% end %>

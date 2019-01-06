@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-  <meta charset="utf-8">
-  <title></title>
-</head>
-<body>
-  <div>
-    <%= @message.created_at %>: <span><%= @message.content %></span>
-  </div>
+  <div><%= @message.created_at %>: <span><%= @message.content %></span></div>
   <form action="/messages/<%= @message.id %>/edit" method="get">
     <input type="submit" value="Edit message">
   </form>
@@ -15,5 +6,3 @@
     <input id="hidden" type="hidden" name="_method" value="delete">
     <input type="submit" value="Delete message">
   </form>
-</body>
-</html>
