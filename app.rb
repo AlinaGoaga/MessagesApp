@@ -37,7 +37,7 @@ class MessageApp < Sinatra::Base
   end
 
   delete '/messages/:id/delete' do
-    Message.get(params[:id]).tags.destroy if Tag.all.count != 0
+    Message.get(params[:id]).tags.destroy
     Message.get(params[:id]).destroy
     redirect '/'
   end
